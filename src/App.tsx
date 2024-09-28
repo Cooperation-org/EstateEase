@@ -1,17 +1,16 @@
-import React from 'react';
-import { Button, Container, Typography } from '@mui/material';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sales from "./components/Sales";
 
 const App: React.FC = () => {
-  return (
-    <Container>
-      <Typography variant="h4" component="h1" gutterBottom>
-        Welcome to React with MUI and Vite
-      </Typography>
-      <Button variant="contained" color="primary">
-        Moka
-      </Button>
-    </Container>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Sales />} />
+                {/* Add other routes here */}
+            </Routes>
+        </Router>
+    );
 };
 
 export default App;
