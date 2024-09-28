@@ -8,7 +8,7 @@ const App: React.FC = () => {
         Welcome to React with MUI and Vite
       </Typography>
       <Button variant="contained" color="primary">
-        Hello World
+        Moka
       </Button>
     </Container>
   );
