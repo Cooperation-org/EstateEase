@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Grid } from "@mui/material";
-import PropertyCard from "./PropertyCard"; // Adjust the path if necessary
+import PropertyCard from "./PropertyCard";
 
 interface Property {
     id: number;

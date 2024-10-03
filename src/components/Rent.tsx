@@ -60,7 +60,7 @@ const properties: Property[] = [
 
 const recents = properties.slice(0, 4);
 
-const SalesPage: React.FC = () => {
+const RentPage: React.FC = () => {
     return (
         <>
             <Navbar />
@@ -84,4 +84,4 @@ const SalesPage: React.FC = () => {
     );
 };
 
-export default SalesPage;
+export default RentPage;
