@@ -1,86 +1,81 @@
-import React from "react";
-import { AppBar, Toolbar, Typography, Button, Box, Link } from "@mui/material";
-import { styled } from "@mui/system";
+import { AppBar, Toolbar, Box, IconButton, Button, Stack } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import EstImage from '../assets/Estate Ease.png';
 
-const Logo = styled("img")({
-    height: "40px",
-    marginRight: "20px",
-});
 
-const Navbar: React.FC = () => (
-    <AppBar
-        position="static"
-        sx={{
-            backgroundColor: "white",
-            boxShadow: "none",
-            padding: "10px 20px",
-        }}
-    >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-            {/* Left Section: Logo and navigation */}
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Logo src="/path/to/your/logo.png" alt="Estate Ease Logo" />
-                <Typography
-                    variant="h6"
-                    sx={{ color: "#000", fontWeight: "bold" }}
-                >
-                    Estate Ease
-                </Typography>
-
-                <Box sx={{ display: "flex", marginLeft: "40px" }}>
-                    <Link
-                        href="#"
-                        underline="none"
-                        sx={{ color: "#000", marginRight: "20px" }}
-                    >
-                        For sale
-                    </Link>
-                    <Link
-                        href="#"
-                        underline="none"
-                        sx={{ color: "gray", marginRight: "20px" }}
-                    >
-                        For rent
-                    </Link>
-                    <Link
-                        href="#"
-                        underline="none"
-                        sx={{ color: "gray", marginRight: "20px" }}
-                    >
-                        About us
-                    </Link>
-                    <Link href="#" underline="none" sx={{ color: "gray" }}>
-                        Contact
-                    </Link>
-                </Box>
-            </Box>
-
-            {/* Right Section: Buttons */}
-            <Box>
-                <Button
-                    variant="outlined"
+const Navbar = () => {
+    return (
+        <Stack>
+            <AppBar position="static">
+                <Toolbar
                     sx={{
-                        borderColor: "#00C853",
-                        color: "#00C853",
-                        marginRight: "15px",
-                        textTransform: "none",
+                        width: '100vw',
+                        maxWidth: '1440px',
+                        justifyContent: 'space-around',
+                        height: '90px',
+                        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                        color: 'white',
+                        fontWeight: 'bold',
+                        position: 'absolute',
+                        top: '7%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        zIndex: 3,
+                        '@supports not (background-color: rgba(0, 0, 0, 0.4))': {
+                            backgroundColor: 'rgb(0, 0, 0)',
+                        },
                     }}
                 >
-                    Log in
-                </Button>
-                <Button
-                    variant="contained"
-                    sx={{
-                        backgroundColor: "#00C853",
-                        color: "#fff",
-                        textTransform: "none",
-                    }}
-                >
-                    Get started
-                </Button>
-            </Box>
-        </Toolbar>
-    </AppBar>
-);
+                    {/* Left Section: Home Icon and Logo */}
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        <IconButton edge="start" aria-label="home" sx={{ width: '50px', height: '50px', color: '#00D22E' }}>
+                            <HomeIcon sx={{ fontSize: '3.5rem' }} />
+                        </IconButton>
+                        <Box sx={{ mt: 3 }} component="img"
+
+                            src={EstImage}
+                        />
+                    </Box>
+
+                    {/* Right Section: Navigation and Buttons */}
+                    <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                        <Button sx={{ color: '#FFFFFF', textTransform: 'none' }}>For sale</Button>
+                        <Button sx={{ color: '#FFFFFF', textTransform: 'none' }}>For rent</Button>
+                        <Button sx={{ color: '#ffffff63', textTransform: 'none' }}>About us</Button>
+                        <Button sx={{ color: '#ffffff63', textTransform: 'none' }}>Contact</Button>
+
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                color: '#FFFFFF',
+                                border: '1px solid #FFFFFF',
+                                borderRadius: '14px',
+                                width: '109px',
+                                height: '50px',
+                                textTransform: 'none',
+                            }}
+                        >
+                            Log in
+                        </Button>
+
+                        <Button
+                            variant="contained"
+                            sx={{
+                                color: '#050505FF',
+                                borderRadius: '14px',
+                                width: '139px',
+                                height: '50px',
+                                backgroundColor: '#FFFFFF',
+                                textTransform: 'none',
+                            }}
+                        >
+                            Get started
+                        </Button>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+        </Stack>
+    );
+};
 
 export default Navbar;
