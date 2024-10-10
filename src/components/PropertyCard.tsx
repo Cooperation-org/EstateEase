@@ -9,11 +9,12 @@ interface Property {
 }
 
 const PropertyCard: React.FC<{ property: Property }> = ({ property }) => (
-    <Card>
+    <Card sx={{ maxWidth:500, borderRadius: "20px" }}>
         <img
             src={property.image}
             alt={property.title}
-            style={{ width: "100%" }}
+            style={{ width: "100%" ,borderRadius: "20px"}}
+            
         />
         <CardContent>
             <Typography variant="h5">{property.title}</Typography>
